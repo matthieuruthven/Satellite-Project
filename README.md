@@ -28,6 +28,9 @@ git clone https://github.com/matthieuruthven/Satellite-Project.git
 
 3. Replace the following files in the *spacecraft-pose-estimation* folder with the corresponding files in *Satellite-Project* (NB the files in *Satellite-Project* have the same name and path as the corresponding ones in *spacecraft-pose-estimation*):
 
+    - *requirements.txt*
+    - *tu_lmk_reg_log_analysis.py*
+    - *tu_lmk_reg_test_mat_to_json.py*
     - *landmark_regression/nms/setup_linux.py*
     - *landmark_regression/nms/dataset/lightbox.py*
     - *landmark_regression/nms/dataset/PEdataset.py*
@@ -36,3 +39,9 @@ git clone https://github.com/matthieuruthven/Satellite-Project.git
     - *landmark_regression/experiments/slp_hpc_001.py*
 
 4. Follow the instructions in the [README.md](https://github.com/mohsij/spacecraft-pose-estimation/blob/main/README.md) file of the TangoUnchained GitHub repository to install the software required to run the code.
+
+5. Download the [SPEED+ dataset](https://zenodo.org/records/5588480) and organise it in the way described in the [README.md](https://github.com/mohsij/spacecraft-pose-estimation/blob/main/README.md) file of the TangoUnchained GitHub repository.
+
+6. Use ```kpt_det_lb.sh``` to train the keypoint detection part of TangoUnchained using synthetic and lightbox data only, and ```kpt_det_sl.sh``` to train the keypoint detection part of TangoUnchained using synthetic and sunlamp data. NB update the *DATA_DIR* and *DATA_DIR_ADVERSARIAL* input arguments in the *.sh* files.
+
+7. Use ```kpt_det_lb_test.sh``` to evaluate the keypoint detection part of TangoUnchained (trained using synthetic and lightbox data only), and ```kpt_det_sl_test.sh``` to evaluate the keypoint detection part of TangoUnchained (trained using synthetic and sunlamp data only). NB update the *DATA_DIR* input argument in the *.sh* files.
